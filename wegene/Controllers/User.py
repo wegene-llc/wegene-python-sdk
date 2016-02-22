@@ -13,7 +13,7 @@ from wegene.APIException import APIException
 from wegene.Models.User import User
 
 
-class UserController(object):
+class User(object):
 
 
     """A Controller to access Endpoints in the WeGeneAPILib API."""

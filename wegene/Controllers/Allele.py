@@ -12,7 +12,7 @@ from wegene.Configuration import Configuration
 from wegene.APIException import APIException
 
 
-class AlleleController(object):
+class Allele(object):
 
 
     """A Controller to access Endpoints in the WeGeneAPILib API."""

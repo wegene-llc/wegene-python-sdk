@@ -13,7 +13,7 @@ from wegene.APIException import APIException
 from wegene.Models.SportAdvice import SportAdvice
 
 
-class SportController(object):
+class Sport(object):
 
 
     """A Controller to access Endpoints in the WeGeneAPILib API."""

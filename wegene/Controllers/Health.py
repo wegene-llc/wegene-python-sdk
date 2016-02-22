@@ -12,7 +12,7 @@ from wegene.Configuration import Configuration
 from wegene.APIException import APIException
 
 
-class HealthController(object):
+class Health(object):
 
 
     """A Controller to access Endpoints in the WeGeneAPILib API."""

@@ -9,9 +9,11 @@ except IOError:
 setup(
     name="wegene",
     version="0.0.1",
+    url="https://github.com/xraywu/wegene-python-sdk",
     description="WeGene SDK for Python",
     license="MIT",
     author="Eddie Wu",
+    author_email="xrayxiaoli@gmail.com",
     package_dir={ 'wegene': 'wegene' },
     packages=find_packages(),
     install_requires=[
