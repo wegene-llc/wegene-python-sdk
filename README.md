@@ -4,7 +4,7 @@ Python SDK for [WeGene](https://www.wegene.com)
 
 ## Installation
 
-    $ pip install node-wegene
+    $ pip install wegene
 
 ## Usage
 
