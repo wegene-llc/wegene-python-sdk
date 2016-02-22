@@ -21,12 +21,12 @@ wegene.Configuration.o_auth_access_token = '<A Valid Access Token with Proper Sc
 
 #### Get Basic User Info
 
-Use `wegene.UserController().get_user()` to get user data
+Use `wegene.User().get_user()` to get user data
 
 ```python
 profile_id = ''
 try:
-    user = wegene.UserController().get_user()
+    user = wegene.User().get_user()
     profile_id = user.profiles[0].id
     print profile_id
 except Exception as e:
@@ -35,11 +35,11 @@ except Exception as e:
 
 #### Get Gene Allele Info
 
-Use `wegene.AlleleController().get_allele(profile_id, locations)` to get allele data
+Use `wegene.Allele().get_allele(profile_id, locations)` to get allele data
 
 ```python
 try:
-    allele = wegene.AlleleController().get_allele(profile_id, ['rs182549'])
+    allele = wegene.Allele().get_allele(profile_id, ['rs182549'])
     print allele
 except Exception as e:
     print e.response_body
@@ -47,11 +47,11 @@ except Exception as e:
 
 #### Get Sport Advice
 
-Use `wegene.SportController().get_advice(profileId, sex, age, height, weight, healthTarget)` to get sport advice
+Use `wegene.Sport().get_advice(profileId, sex, age, height, weight, healthTarget)` to get sport advice
 
 ```python
 try:
-    advice = wegene.SportController().get_advice(profile_id, 'male', 26, 174, 84, 'slimming')
+    advice = wegene.Sport().get_advice(profile_id, 'male', 26, 174, 84, 'slimming')
     print advice.total_intake
 except Exception as e:
     print e.response_body
@@ -59,15 +59,15 @@ except Exception as e:
 
 #### Get Health Data
 
-Use `wegene.HealthController().get_risk(profileId, reportId)` to get health risk info
+Use `wegene.Health().get_risk(profileId, reportId)` to get health risk info
 
-Use `wegene.HealthController().get_drug(profileId, reportId)` to get drug response info
+Use `wegene.Health().get_drug(profileId, reportId)` to get drug response info
 
-Use `wegene.HealthController().get_carrier(profileId, reportId)` to get disease carrier info
+Use `wegene.Health().get_carrier(profileId, reportId)` to get disease carrier info
 
 ```python
 try:
-    drug = wegene.HealthController().get_drug(profile_id, 158)
+    drug = wegene.Health().get_drug(profile_id, 158)
     print drug
 except Exception as e:
     print e.response_body
