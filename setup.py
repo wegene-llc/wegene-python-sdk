@@ -2,13 +2,14 @@
 from setuptools import setup, find_packages
 
 try:
-    long_description = open("README.md").read()
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
 except IOError:
-    long_description = ""
+    long_description = open("README.md").read()
 
 setup(
     name="wegene",
-    version="0.0.2",
+    version="0.0.3",
     url="https://github.com/xraywu/wegene-python-sdk",
     description="WeGene SDK for Python",
     license="MIT",
