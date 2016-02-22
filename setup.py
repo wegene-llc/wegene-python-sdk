@@ -8,7 +8,7 @@ except IOError:
 
 setup(
     name="wegene",
-    version="0.0.1",
+    version="0.0.2",
     url="https://github.com/xraywu/wegene-python-sdk",
     description="WeGene SDK for Python",
     license="MIT",

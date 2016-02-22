@@ -47,7 +47,7 @@ except Exception as e:
 
 #### Get Sport Advice
 
-Use `wegene.Sport().get_advice(profileId, sex, age, height, weight, healthTarget)` to get sport advice
+Use `wegene.Sport().get_advice(profile_id, sex, age, height, weight, health_target)` to get sport advice
 
 ```python
 try:
@@ -59,11 +59,11 @@ except Exception as e:
 
 #### Get Health Data
 
-Use `wegene.Health().get_risk(profileId, reportId)` to get health risk info
+Use `wegene.Health().get_risk(profile_id, report_id)` to get health risk info
 
-Use `wegene.Health().get_drug(profileId, reportId)` to get drug response info
+Use `wegene.Health().get_drug(profile_id, report_id)` to get drug response info
 
-Use `wegene.Health().get_carrier(profileId, reportId)` to get disease carrier info
+Use `wegene.Health().get_carrier(profile_id, report_id)` to get disease carrier info
 
 ```python
 try:
