@@ -17,7 +17,7 @@ except Exception as e:
     print e.response_body
 
 try:
-    advice = wegene.Sport().get_advice(profile_id, 'male', 26, 174, 84, 'slimming')
+    advice = wegene.Sport().get_advice(profile_id, 'man', 26, 174, 84, 'slimming')
     print advice.total_intake
 except Exception as e:
     print e.response_body
