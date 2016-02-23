@@ -15,7 +15,7 @@ class Report(object):
     Report for health risk, drug response or disease carrier information
 
     Attributes:
-        dscription (string): Description of the item
+        description (string): Description of the item
         mag (string): Research value
         odds (int): Prevelance every 100,000 people
         result (GenotypesModel): Detailed genetic information for the item
@@ -33,7 +33,7 @@ class Report(object):
                 be set through the **kwargs of the constructor. The values
                 that can be supplied and their types are as follows::
 
-                    dscription -- string -- Sets the attribute dscription
+                    description -- string -- Sets the attribute description
                     mag -- string -- Sets the attribute mag
                     odds -- int -- Sets the attribute odds
                     result -- GenotypesModel -- Sets the attribute result
@@ -41,7 +41,7 @@ class Report(object):
 
         """
         # Set all of the parameters to their default values
-        self.dscription = None
+        self.description = None
         self.mag = None
         self.odds = None
         self.result = None
@@ -49,7 +49,7 @@ class Report(object):
 
         # Create a mapping from API property names to Model property names
         replace_names = {
-            "dscription": "dscription",
+            "description": "description",
             "mag": "mag",
             "odds": "odds",
             "result": "result",
@@ -81,7 +81,7 @@ class Report(object):
         """
         # Create a mapping from Model property names to API property names
         replace_names = {
-            "dscription": "dscription",
+            "description": "description",
             "mag": "mag",
             "odds": "odds",
             "result": "result",

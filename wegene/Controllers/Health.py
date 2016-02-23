@@ -30,7 +30,7 @@ class Health(object):
                 look
 
         Returns:
-            mixed: Response from the API.
+            Report: Response from the API.
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -74,7 +74,16 @@ class Health(object):
         if response.code < 200 or response.code > 206:  # 200 = HTTP OK
             raise APIException("HTTP Response Not OK", response.code, response.body)
 
-        return response.body
+        # Try to cast response to desired type
+        if isinstance(response.body, dict):
+            # Response is already in a dictionary, return the object
+            try:
+                return Report(**response.body)
+            except TypeError:
+                raise APIException("Invalid JSON returned", response.code, response.body)
+
+        # If we got here then an error occured while trying to parse the response
+        raise APIException("Invalid JSON returned", response.code, response.body)
 
     def get_carrier(self,
                        profile_id,
@@ -89,7 +98,7 @@ class Health(object):
                 look
 
         Returns:
-            mixed: Response from the API.
+            Report: Response from the API.
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -133,7 +142,16 @@ class Health(object):
         if response.code < 200 or response.code > 206:  # 200 = HTTP OK
             raise APIException("HTTP Response Not OK", response.code, response.body)
 
-        return response.body
+        # Try to cast response to desired type
+        if isinstance(response.body, dict):
+            # Response is already in a dictionary, return the object
+            try:
+                return Report(**response.body)
+            except TypeError:
+                raise APIException("Invalid JSON returned", response.code, response.body)
+
+        # If we got here then an error occured while trying to parse the response
+        raise APIException("Invalid JSON returned", response.code, response.body)
 
     def get_drug(self,
                     profile_id,
@@ -148,7 +166,7 @@ class Health(object):
                 look
 
         Returns:
-            mixed: Response from the API.
+            Report: Response from the API. 
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -192,4 +210,13 @@ class Health(object):
         if response.code < 200 or response.code > 206:  # 200 = HTTP OK
             raise APIException("HTTP Response Not OK", response.code, response.body)
 
-        return response.body
+         # Try to cast response to desired type
+        if isinstance(response.body, dict):
+            # Response is already in a dictionary, return the object
+            try:
+                return Report(**response.body)
+            except TypeError:
+                raise APIException("Invalid JSON returned", response.code, response.body)
+
+        # If we got here then an error occured while trying to parse the response
+        raise APIException("Invalid JSON returned", response.code, response.body)

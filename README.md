@@ -4,7 +4,7 @@ Python SDK for [WeGene](https://www.wegene.com)
 
 ## Installation
 
-    $ pip install wegene
+    $ pip install WWW::WeGeneClient
 
 ## Usage
 
