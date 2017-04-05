@@ -4,3 +4,6 @@ from GenotypesModel import *
 from SportAdvice import *
 from Report import *
 from GenotypeModel import *
+from AncestryArea import *
+from AncestryBlock import *
+from AncestryComposition import *

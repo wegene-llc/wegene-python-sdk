@@ -23,6 +23,12 @@ except Exception as e:
     print e.response_body
 
 try:
+    ancestry = wegene.Ancestry().get_ancestry(profile_id)
+    print ancestry
+except Exception as e:
+    print e.response_body
+
+try:
     haplogroups = wegene.Haplogroups().get_haplogroups(profile_id)
     print haplogroups
 except Exception as e:

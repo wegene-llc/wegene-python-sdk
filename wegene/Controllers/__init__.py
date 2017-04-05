@@ -5,3 +5,4 @@ from Health import *
 from Athletigen import *
 from Risk import *
 from Haplogroups import *
+from Ancestry import *
