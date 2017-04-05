@@ -45,6 +45,54 @@ except Exception as e:
     print e.response_body
 ```
 
+#### Get Athletigen
+
+Use `wegene.Athletigen().get_athletigen(profile_id, report_id)` to get athletigen data
+
+```python
+try:
+    athletigen = wegene.Athletigen().get_athletigen(profile_id, 1487)
+    print athletigen
+except Exception as e:
+    print e.response_body
+```
+
+#### Get Health Risk
+
+Use `wegene.Risk().get_risk(profile_id, report_id)` to get health risk data
+
+```python
+try:
+    risk = wegene.Risk().get_risk(profile_id, 88)
+    print risk
+except Exception as e:
+    print e.response_body
+```
+
+#### Get Ancestry Composition
+
+Use `wegene.Ancestry().get_ancestry(profile_id)` to get user ancestry composition
+
+```python
+try:
+    ancestry = wegene.Ancestry().get_ancestry(profile_id)
+    print ancestry
+except Exception as e:
+    print e.response_body
+```
+
+#### Get Haplogroups
+
+Use `wegene.Haplogroups().get_haplogroups(profile_id)` to get user haplogroups
+
+```python
+try:
+    haplogroups = wegene.Haplogroups().get_haplogroups(profile_id)
+    print haplogroups
+except Exception as e:
+    print e.response_body
+```
+
 #### Get Sport Advice
 
 Use `wegene.Sport().get_advice(profile_id, sex, age, height, weight, health_target)` to get sport advice
@@ -59,7 +107,9 @@ except Exception as e:
 
 #### Get Health Data
 
-Use `wegene.Health().get_risk(profile_id, report_id)` to get health risk info
+Use `wegene.Health().get_metabolism(profile_id, report_id)` to get health metabolism info
+
+Use `wegene.Health().get_traits(profile_id, report_id)` to get genetic traits info
 
 Use `wegene.Health().get_drug(profile_id, report_id)` to get drug response info
 
