@@ -8,6 +8,7 @@
 from wegene.APIHelper import APIHelper
 from wegene.Models.GenotypesModel import GenotypesModel
 
+
 class Report(object):
 
     """Implementation of the 'report' model.
@@ -20,6 +21,11 @@ class Report(object):
         odds (int): Prevelance every 100,000 people
         result (GenotypesModel): Detailed genetic information for the item
         sex (string): Sex the item applied to
+        rank (string): Rank of metabolism abilities
+        caseid (int): ID of the report item
+        score (float): Score of athletigen item
+        percent (string): Percentage of health risk in all users
+        risk (float): Risk value of health risk items
 
     """
 
@@ -38,6 +44,11 @@ class Report(object):
                     odds -- int -- Sets the attribute odds
                     result -- GenotypesModel -- Sets the attribute result
                     sex -- string -- Sets the attribute sex
+                    rank -- string -- Rank of metabolism abilities
+                    caseid -- int -- ID of the report item
+                    score -- float -- Score of athletigen item
+                    percent -- string -- Percentage of health risk in all users
+                    risk -- float -- Risk value of health risk items
 
         """
         # Set all of the parameters to their default values
@@ -46,6 +57,11 @@ class Report(object):
         self.odds = None
         self.result = None
         self.sex = None
+        self.rank = None
+        self.caseid = None
+        self.score = None
+        self.percent = None
+        self.risk = None
 
         # Create a mapping from API property names to Model property names
         replace_names = {
@@ -54,6 +70,11 @@ class Report(object):
             "odds": "odds",
             "result": "result",
             "sex": "sex",
+            "rank": "rank",
+            "caseid": "caseid",
+            "score": "score",
+            "percent": "percent",
+            "risk": "risk",
         }
 
         # Parse all of the Key-Value arguments
@@ -86,6 +107,11 @@ class Report(object):
             "odds": "odds",
             "result": "result",
             "sex": "sex",
+            "rank": "rank",
+            "caseid": "caseid",
+            "score": "score",
+            "percent": "percent",
+            "risk": "risk",
         }
 
         retval = dict()

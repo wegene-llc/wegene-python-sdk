@@ -7,6 +7,7 @@
 """
 from wegene.APIHelper import APIHelper
 
+
 class Profile(object):
 
     """Implementation of the 'profile' model.

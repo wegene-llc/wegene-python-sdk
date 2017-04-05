@@ -13,7 +13,7 @@ from wegene.APIException import APIException
 from wegene.Models.User import User
 
 
-class User(object):
+class WeGeneUser(object):
 
 
     """A Controller to access Endpoints in the WeGeneAPILib API."""
@@ -45,7 +45,7 @@ class User(object):
         # Prepare headers
         headers = {
 
-            "Authorization": "Bearer "+ Configuration.o_auth_access_token,
+            "Authorization": "Bearer " + Configuration.o_auth_access_token,
             "user-agent": "APIMATIC 2.0",
             "accept": "application/json",
 

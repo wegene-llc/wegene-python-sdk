@@ -8,6 +8,7 @@
 from wegene.APIHelper import APIHelper
 from wegene.Models.Profile import Profile
 
+
 class User(object):
 
     """Implementation of the 'user' model.
@@ -15,7 +16,7 @@ class User(object):
     Model for user information
 
     Attributes:
-        id (int): Unique Wegene Id
+        id (string): Unique Wegene Id
         profiles (list of Profile): Available genetic profile data in array
         email (string): User email at Wegene
 
@@ -31,7 +32,7 @@ class User(object):
                 be set through the **kwargs of the constructor. The values
                 that can be supplied and their types are as follows::
 
-                    id -- int -- Sets the attribute id
+                    id -- string -- Sets the attribute id
                     profiles -- list of Profile -- Sets the attribute profiles
                     email -- string -- Sets the attribute email
 

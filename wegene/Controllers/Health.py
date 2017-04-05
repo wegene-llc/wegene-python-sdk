@@ -10,80 +10,12 @@ import unirest
 from wegene.APIHelper import APIHelper
 from wegene.Configuration import Configuration
 from wegene.APIException import APIException
+from wegene.Models.Report import Report
 
 
 class Health(object):
 
-
     """A Controller to access Endpoints in the WeGeneAPILib API."""
-
-    def get_risk(self,
-                    profile_id,
-                    report_id):
-        """Does a POST request to /health/risk/{profile_id}.
-
-        Health risk based on genetic information
-
-        Args:
-            profile_id (string): Genetic profile id
-            report_id (string): Report Id for the specific health risk to
-                look
-
-        Returns:
-            Report: Response from the API.
-
-        Raises:
-            APIException: When an error occurs while fetching the data from
-                the remote API. This exception includes the HTTP Response
-                code, an error message, and the HTTP body that was received in
-                the request.
-
-        """
-        # The base uri for api requests
-        query_builder = Configuration.BASE_URI
-
-        # Prepare query string for API call
-        query_builder += "/health/risk/{profile_id}"
-
-        # Process optional template parameters
-        query_builder = APIHelper.append_url_with_template_parameters(query_builder, {
-            "profile_id": profile_id
-        })
-
-        # Validate and preprocess url
-        query_url = APIHelper.clean_url(query_builder)
-
-        # Prepare headers
-        headers = {
-
-            "Authorization": "Bearer "+ Configuration.o_auth_access_token,
-            "user-agent": "APIMATIC 2.0",
-            "accept": "application/json",
-
-        }
-
-        # Prepare parameters
-        parameters = {
-            "report_id": report_id
-        }
-
-        # Prepare and invoke the API call request to fetch the response
-        response = unirest.post(query_url, headers=headers, params=parameters)
-
-        # Error handling using HTTP status codes
-        if response.code < 200 or response.code > 206:  # 200 = HTTP OK
-            raise APIException("HTTP Response Not OK", response.code, response.body)
-
-        # Try to cast response to desired type
-        if isinstance(response.body, dict):
-            # Response is already in a dictionary, return the object
-            try:
-                return Report(**response.body)
-            except TypeError:
-                raise APIException("Invalid JSON returned", response.code, response.body)
-
-        # If we got here then an error occured while trying to parse the response
-        raise APIException("Invalid JSON returned", response.code, response.body)
 
     def get_carrier(self,
                        profile_id,
@@ -124,7 +56,7 @@ class Health(object):
         # Prepare headers
         headers = {
 
-            "Authorization": "Bearer "+ Configuration.o_auth_access_token,
+            "Authorization": "Bearer " + Configuration.o_auth_access_token,
             "user-agent": "APIMATIC 2.0",
             "accept": "application/json",
 
@@ -166,7 +98,7 @@ class Health(object):
                 look
 
         Returns:
-            Report: Response from the API. 
+            Report: Response from the API.
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -193,6 +125,142 @@ class Health(object):
         headers = {
 
             "Authorization": "Bearer "+ Configuration.o_auth_access_token,
+            "user-agent": "APIMATIC 2.0",
+            "accept": "application/json",
+
+        }
+
+        # Prepare parameters
+        parameters = {
+            "report_id": report_id
+        }
+
+        # Prepare and invoke the API call request to fetch the response
+        response = unirest.post(query_url, headers=headers, params=parameters)
+
+        # Error handling using HTTP status codes
+        if response.code < 200 or response.code > 206:  # 200 = HTTP OK
+            raise APIException("HTTP Response Not OK", response.code, response.body)
+
+         # Try to cast response to desired type
+        if isinstance(response.body, dict):
+            # Response is already in a dictionary, return the object
+            try:
+                return Report(**response.body)
+            except TypeError:
+                raise APIException("Invalid JSON returned", response.code, response.body)
+
+        # If we got here then an error occured while trying to parse the response
+        raise APIException("Invalid JSON returned", response.code, response.body)
+
+    def get_traits(self,
+                    profile_id,
+                    report_id):
+        """Does a POST request to /health/traits/{profile_id}.
+
+        Drug response based on genetic information
+
+        Args:
+            profile_id (string): Genetic profile Id
+            report_id (string): Report Id for the specific drug response to
+                look
+
+        Returns:
+            Report: Response from the API.
+
+        Raises:
+            APIException: When an error occurs while fetching the data from
+                the remote API. This exception includes the HTTP Response
+                code, an error message, and the HTTP body that was received in
+                the request.
+
+        """
+        # The base uri for api requests
+        query_builder = Configuration.BASE_URI
+
+        # Prepare query string for API call
+        query_builder += "/health/traits/{profile_id}"
+
+        # Process optional template parameters
+        query_builder = APIHelper.append_url_with_template_parameters(query_builder, {
+            "profile_id": profile_id
+        })
+
+        # Validate and preprocess url
+        query_url = APIHelper.clean_url(query_builder)
+
+        # Prepare headers
+        headers = {
+
+            "Authorization": "Bearer "+ Configuration.o_auth_access_token,
+            "user-agent": "APIMATIC 2.0",
+            "accept": "application/json",
+
+        }
+
+        # Prepare parameters
+        parameters = {
+            "report_id": report_id
+        }
+
+        # Prepare and invoke the API call request to fetch the response
+        response = unirest.post(query_url, headers=headers, params=parameters)
+
+        # Error handling using HTTP status codes
+        if response.code < 200 or response.code > 206:  # 200 = HTTP OK
+            raise APIException("HTTP Response Not OK", response.code, response.body)
+
+         # Try to cast response to desired type
+        if isinstance(response.body, dict):
+            # Response is already in a dictionary, return the object
+            try:
+                return Report(**response.body)
+            except TypeError:
+                raise APIException("Invalid JSON returned", response.code, response.body)
+
+        # If we got here then an error occured while trying to parse the response
+        raise APIException("Invalid JSON returned", response.code, response.body)
+
+    def get_metabolism(self,
+                    profile_id,
+                    report_id):
+        """Does a POST request to /health/metabolism/{profile_id}.
+
+        Drug response based on genetic information
+
+        Args:
+            profile_id (string): Genetic profile Id
+            report_id (string): Report Id for the specific drug response to
+                look
+
+        Returns:
+            Report: Response from the API.
+
+        Raises:
+            APIException: When an error occurs while fetching the data from
+                the remote API. This exception includes the HTTP Response
+                code, an error message, and the HTTP body that was received in
+                the request.
+
+        """
+        # The base uri for api requests
+        query_builder = Configuration.BASE_URI
+
+        # Prepare query string for API call
+        query_builder += "/health/metabolism/{profile_id}"
+
+        # Process optional template parameters
+        query_builder = APIHelper.append_url_with_template_parameters(query_builder, {
+            "profile_id": profile_id
+        })
+
+        # Validate and preprocess url
+        query_url = APIHelper.clean_url(query_builder)
+
+        # Prepare headers
+        headers = {
+
+            "Authorization": "Bearer " + Configuration.o_auth_access_token,
             "user-agent": "APIMATIC 2.0",
             "accept": "application/json",
 
