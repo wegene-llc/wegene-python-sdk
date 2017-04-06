@@ -21,12 +21,12 @@ wegene.Configuration.o_auth_access_token = '<A Valid Access Token with Proper Sc
 
 #### Get Basic User Info
 
-Use `wegene.User().get_user()` to get user data
+Use `wegene.WeGeneUser().get_user()` to get user data
 
 ```python
 profile_id = ''
 try:
-    user = wegene.User().get_user()
+    user = wegene.WeGeneUser().get_user()
     profile_id = user.profiles[0].id
     print profile_id
 except Exception as e:
