@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst', format='md')
-except IOError:
-    long_description = open("README.md").read()
+
+long_description = 'WeGene Python SDK. For details check https://api.wegene.com'
 
 setup(
     name="wegene",
-    version="0.0.5",
+    version="0.0.6",
     url="https://github.com/xraywu/wegene-python-sdk",
     description="WeGene SDK for Python",
     license="MIT",

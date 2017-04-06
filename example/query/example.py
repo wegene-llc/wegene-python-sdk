@@ -41,13 +41,31 @@ except Exception as e:
     print e.response_body
 
 try:
+    metabolism = wegene.Health().get_metabolism(profile_id, 5)
+    print metabolism
+except Exception as e:
+    print e.response_body
+
+try:
+    carrier = wegene.Health().get_carrier(profile_id, 184)
+    print carrier
+except Exception as e:
+    print e.response_body
+
+try:
+    traits = wegene.Health().get_traits(profile_id, 34)
+    print traits
+except Exception as e:
+    print e.response_body
+
+try:
     advice = wegene.Sport().get_advice(profile_id, 'man', 26, 174, 84, 'slimming')
     print advice.total_intake
 except Exception as e:
     print e.response_body
 
 try:
-    allele = wegene.Allele().get_allele(profile_id, ['rs182549'])
+    allele = wegene.Allele().get_allele(profile_id, ['rs671'])
     print allele
 except Exception as e:
     print e.response_body
