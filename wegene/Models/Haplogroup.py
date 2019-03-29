@@ -10,7 +10,7 @@ from wegene.APIHelper import APIHelper
 
 class Haplogroup(object):
 
-    """Implementation of the 'report' model.
+    """Implementation of the 'haplogroup' model.
 
     Report for user haplogroups
 

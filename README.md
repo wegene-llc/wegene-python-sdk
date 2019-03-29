@@ -93,17 +93,18 @@ except Exception as e:
     print e.response_body
 ```
 
-#### Get Sport Advice
+#### Get Demographics
 
-Use `wegene.Sport().get_advice(profile_id, sex, age, height, weight, health_target)` to get sport advice
+Use `wegene.Demographics().get_demographics(profile_id)` to get user demographics
 
 ```python
 try:
-    advice = wegene.Sport().get_advice(profile_id, 'man', 26, 174, 84, 'slimming')
-    print advice.total_intake
+    demographics = wegene.Demographics().get_demographics(profile_id)
+    print(demographics)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
+
 
 #### Get Health Data
 

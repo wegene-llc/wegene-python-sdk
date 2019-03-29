@@ -1,71 +1,74 @@
 import wegene
 
+wegene.Configuration.BASE_URI = 'https://api.wegene.com'
 wegene.Configuration.o_auth_access_token = '<A valid token with proper scope>'
 
 profile_id = ''
 try:
     user = wegene.WeGeneUser().get_user()
     profile_id = user.profiles[0].id
-    print profile_id
+    print(profile_id)
+    print(user.profiles[0].format)
+    print(user.profiles[0].name)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     risk = wegene.Risk().get_risk(profile_id, 88)
-    print risk
+    print(risk)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     athletigen = wegene.Athletigen().get_athletigen(profile_id, 1487)
-    print athletigen
+    print(athletigen)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     ancestry = wegene.Ancestry().get_ancestry(profile_id)
-    print ancestry
+    print(ancestry)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     haplogroups = wegene.Haplogroups().get_haplogroups(profile_id)
-    print haplogroups
+    print(haplogroups)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
+
+try:
+    demographics = wegene.Demographics().get_demographics(profile_id)
+    print(demographics)
+except Exception as e:
+    print(e.response_body)
 
 try:
     drug = wegene.Health().get_drug(profile_id, 1481)
-    print drug
+    print(drug)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     metabolism = wegene.Health().get_metabolism(profile_id, 5)
-    print metabolism
+    print(metabolism)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     carrier = wegene.Health().get_carrier(profile_id, 184)
-    print carrier
+    print(carrier)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     traits = wegene.Health().get_traits(profile_id, 34)
-    print traits
+    print(traits)
 except Exception as e:
-    print e.response_body
-
-try:
-    advice = wegene.Sport().get_advice(profile_id, 'man', 26, 174, 84, 'slimming')
-    print advice.total_intake
-except Exception as e:
-    print e.response_body
+    print(e.response_body)
 
 try:
     allele = wegene.Allele().get_allele(profile_id, ['rs671'])
-    print allele
+    print(allele)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
