@@ -1,7 +1,7 @@
 import wegene
 
 wegene.Configuration.BASE_URI = 'https://api.wegene.com'
-wegene.Configuration.o_auth_access_token = '<A valid token with proper scope>'
+wegene.Configuration.o_auth_access_token = '<A Valid Access Token with Proper Scope>'
 
 profile_id = ''
 try:
@@ -15,8 +15,11 @@ except Exception as e:
 
 try:
     risk = wegene.Risk().get_risk(profile_id, 88)
-    print(risk)
+    print(risk.caseid)
+    print(risk.risk)
+    print(risk.genotypes.data[0].rsid)
 except Exception as e:
+    print(e)
     print(e.response_body)
 
 try:

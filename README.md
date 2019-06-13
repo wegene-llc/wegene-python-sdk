@@ -64,7 +64,9 @@ Use `wegene.Risk().get_risk(profile_id, report_id)` to get health risk data
 ```python
 try:
     risk = wegene.Risk().get_risk(profile_id, 88)
-    print risk
+    print(risk.caseid)
+    print(risk.risk)
+    print(risk.genotypes.data[0].rsid)
 except Exception as e:
     print e.response_body
 ```

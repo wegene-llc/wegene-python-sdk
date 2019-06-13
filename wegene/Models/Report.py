@@ -19,7 +19,7 @@ class Report(object):
         description (string): Description of the item
         mag (string): Research value
         odds (int): Prevelance every 100,000 people
-        result (GenotypesModel): Detailed genetic information for the item
+        genotypes (GenotypesModel): Detailed genetic information for the item
         sex (string): Sex the item applied to
         rank (string): Rank of metabolism abilities
         caseid (int): ID of the report item
@@ -42,7 +42,7 @@ class Report(object):
                     description -- string -- Sets the attribute description
                     mag -- string -- Sets the attribute mag
                     odds -- int -- Sets the attribute odds
-                    result -- GenotypesModel -- Sets the attribute result
+                    genotypes -- GenotypesModel -- Sets the attribute genotypes
                     sex -- string -- Sets the attribute sex
                     rank -- string -- Rank of metabolism abilities
                     caseid -- int -- ID of the report item
@@ -55,7 +55,7 @@ class Report(object):
         self.description = None
         self.mag = None
         self.odds = None
-        self.result = None
+        self.genotypes = None
         self.sex = None
         self.rank = None
         self.caseid = None
@@ -68,7 +68,7 @@ class Report(object):
             "description": "description",
             "mag": "mag",
             "odds": "odds",
-            "result": "result",
+            "genotypes": "genotypes",
             "sex": "sex",
             "rank": "rank",
             "caseid": "caseid",
@@ -85,8 +85,8 @@ class Report(object):
                     setattr(self, replace_names[key], kwargs[key])
 
             # Other objects also need to be initialised properly
-            if "result" in kwargs:
-                self.result = GenotypesModel(**kwargs["result"])
+            if "genotypes" in kwargs:
+                self.genotypes = GenotypesModel(kwargs["genotypes"])
 
     def resolve_names(self):
         """Creates a dictionary representation of this object.
@@ -105,7 +105,7 @@ class Report(object):
             "description": "description",
             "mag": "mag",
             "odds": "odds",
-            "result": "result",
+            "genotypes": "genotypes",
             "sex": "sex",
             "rank": "rank",
             "caseid": "caseid",
