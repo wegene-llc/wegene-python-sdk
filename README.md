@@ -80,7 +80,7 @@ Use `wegene.Psychology().get_psychology(profile_id, report_id)` to get psycholog
 
 ```python
 try:
-    athletigen = wegene.Psychology().get_psychology(profile_id, 1487)
+    athletigen = wegene.Psychology().get_psychology(profile_id, 1557)
     print(psychology.caseid)
     print(psychology.rank)
     print(psychology.genotypes.data[0].rsid)
