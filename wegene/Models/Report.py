@@ -45,7 +45,7 @@ class Report(object):
                     odds -- int -- Sets the attribute odds
                     genotypes -- GenotypesModel -- Sets the attribute genotypes
                     sex -- string -- Sets the attribute sex
-                    rank -- string -- Rank of mathletigen/skin/psychology/etabolism abilities
+                    rank -- string -- Rank of athletigen/skin/psychology/metabolism abilities
                     caseid -- int -- ID of the report item
                     score -- float -- Score of athletigen/skin/psychology item
                     percent -- string -- Percentage of health risk in all users
