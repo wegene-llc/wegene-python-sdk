@@ -27,10 +27,11 @@ Use `wegene.WeGeneUser().get_user()` to get user data
 profile_id = ''
 try:
     user = wegene.WeGeneUser().get_user()
-    profile_id = user.profiles[0].id
-    print profile_id
+    print(user.profiles[0].id)
+    print(user.profiles[0].format)
+    print(user.profiles[0].name)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 #### Get Gene Allele Info
@@ -40,9 +41,9 @@ Use `wegene.Allele().get_allele(profile_id, locations)` to get allele data
 ```python
 try:
     allele = wegene.Allele().get_allele(profile_id, ['rs182549'])
-    print allele
+    print(allele)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 #### Get Athletigen
@@ -52,9 +53,39 @@ Use `wegene.Athletigen().get_athletigen(profile_id, report_id)` to get athletige
 ```python
 try:
     athletigen = wegene.Athletigen().get_athletigen(profile_id, 1487)
-    print athletigen
+    print(athletigen.caseid)
+    print(athletigen.rank)
+    print(athletigen.genotypes.data[0].rsid)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
+```
+
+#### Get Skin
+
+Use `wegene.Skin().get_skin(profile_id, report_id)` to get skin data
+
+```python
+try:
+    skin = wegene.Skin().get_skin(profile_id, 1522)
+    print(skin.caseid)
+    print(skin.rank)
+    print(skin.genotypes.data[0].rsid)
+except Exception as e:
+    print(e.response_body)
+```
+
+#### Get Psychology
+
+Use `wegene.Psychology().get_psychology(profile_id, report_id)` to get psychology data
+
+```python
+try:
+    athletigen = wegene.Psychology().get_psychology(profile_id, 1487)
+    print(psychology.caseid)
+    print(psychology.rank)
+    print(psychology.genotypes.data[0].rsid)
+except Exception as e:
+    print(e.response_body)
 ```
 
 #### Get Health Risk
@@ -68,7 +99,7 @@ try:
     print(risk.risk)
     print(risk.genotypes.data[0].rsid)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 #### Get Ancestry Composition
@@ -78,9 +109,10 @@ Use `wegene.Ancestry().get_ancestry(profile_id)` to get user ancestry compositio
 ```python
 try:
     ancestry = wegene.Ancestry().get_ancestry(profile_id)
-    print ancestry
+    print(ancestry.block.chinese_nation)
+    print(ancestry.area.han_southern)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 #### Get Haplogroups
@@ -90,9 +122,10 @@ Use `wegene.Haplogroups().get_haplogroups(profile_id)` to get user haplogroups
 ```python
 try:
     haplogroups = wegene.Haplogroups().get_haplogroups(profile_id)
-    print haplogroups
+    print(haplogroups.y)
+    print(haplogroups.mt)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 #### Get Demographics
@@ -102,7 +135,8 @@ Use `wegene.Demographics().get_demographics(profile_id)` to get user demographic
 ```python
 try:
     demographics = wegene.Demographics().get_demographics(profile_id)
-    print(demographics)
+    print(demographics.surname)
+    print(demographics.population)
 except Exception as e:
     print(e.response_body)
 ```
@@ -121,9 +155,11 @@ Use `wegene.Health().get_carrier(profile_id, report_id)` to get disease carrier 
 ```python
 try:
     drug = wegene.Health().get_drug(profile_id, 158)
-    print drug
+    print(drug.caseid)
+    print(drug.tsummary)
+    print(drug.genotypes.data[0].rsid)
 except Exception as e:
-    print e.response_body
+    print(e.response_body)
 ```
 
 ## Documentation

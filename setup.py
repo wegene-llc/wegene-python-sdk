@@ -6,7 +6,7 @@ long_description = 'WeGene Python SDK. For details check https://api.wegene.com'
 
 setup(
     name="wegene",
-    version="0.1.3",
+    version="0.1.4",
     url="https://github.com/xraywu/wegene-python-sdk",
     description="WeGene SDK for Python",
     license="MIT",

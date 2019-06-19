@@ -22,7 +22,7 @@ class Ancestry(object):
                     profile_id):
         """Does a POST request to /ancestry/{profile_id}.
 
-        Athletigen based on genetic information
+        Ancestry composition based on genetic information
 
         Args:
             profile_id (string): Genetic profile id

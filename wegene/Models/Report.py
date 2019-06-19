@@ -23,9 +23,10 @@ class Report(object):
         sex (string): Sex the item applied to
         rank (string): Rank of metabolism abilities
         caseid (int): ID of the report item
-        score (float): Score of athletigen item
+        score (float): Score of athletigen/skin/psychology item
         percent (string): Percentage of health risk in all users
         risk (float): Risk value of health risk items
+        tsummary (string): Case result for carrier/traits/drug cases
 
     """
 
@@ -44,11 +45,12 @@ class Report(object):
                     odds -- int -- Sets the attribute odds
                     genotypes -- GenotypesModel -- Sets the attribute genotypes
                     sex -- string -- Sets the attribute sex
-                    rank -- string -- Rank of metabolism abilities
+                    rank -- string -- Rank of mathletigen/skin/psychology/etabolism abilities
                     caseid -- int -- ID of the report item
-                    score -- float -- Score of athletigen item
+                    score -- float -- Score of athletigen/skin/psychology item
                     percent -- string -- Percentage of health risk in all users
                     risk -- float -- Risk value of health risk items
+                    tsummary -- string -- Case result for carrier/traits/drug/metabolism health cases
 
         """
         # Set all of the parameters to their default values
@@ -62,6 +64,7 @@ class Report(object):
         self.score = None
         self.percent = None
         self.risk = None
+        self.tsummary = None
 
         # Create a mapping from API property names to Model property names
         replace_names = {
@@ -75,6 +78,7 @@ class Report(object):
             "score": "score",
             "percent": "percent",
             "risk": "risk",
+            "tsummary": "tsummary",
         }
 
         # Parse all of the Key-Value arguments
@@ -112,6 +116,7 @@ class Report(object):
             "score": "score",
             "percent": "percent",
             "risk": "risk",
+            "tsummary": "tsummary",
         }
 
         retval = dict()
