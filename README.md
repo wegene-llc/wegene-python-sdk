@@ -54,8 +54,10 @@ Use `wegene.Athletigen().get_athletigen(profile_id, report_id)` to get athletige
 try:
     athletigen = wegene.Athletigen().get_athletigen(profile_id, 1487)
     print(athletigen.caseid)
+    print(athletigen.description)
     print(athletigen.rank)
     print(athletigen.genotypes.data[0].rsid)
+    print(athletigen.genotypes.data[0].genotype)
 except Exception as e:
     print(e.response_body)
 ```
@@ -68,8 +70,10 @@ Use `wegene.Skin().get_skin(profile_id, report_id)` to get skin data
 try:
     skin = wegene.Skin().get_skin(profile_id, 1522)
     print(skin.caseid)
+    print(skin.description)
     print(skin.rank)
     print(skin.genotypes.data[0].rsid)
+    print(skin.genotypes.data[0].genotype)
 except Exception as e:
     print(e.response_body)
 ```
@@ -80,10 +84,12 @@ Use `wegene.Psychology().get_psychology(profile_id, report_id)` to get psycholog
 
 ```python
 try:
-    athletigen = wegene.Psychology().get_psychology(profile_id, 1557)
+    psychology = wegene.Psychology().get_psychology(profile_id, 1557)
     print(psychology.caseid)
+    print(psychology.description)
     print(psychology.rank)
     print(psychology.genotypes.data[0].rsid)
+    print(psychology.genotypes.data[0].genotype)
 except Exception as e:
     print(e.response_body)
 ```
@@ -96,8 +102,32 @@ Use `wegene.Risk().get_risk(profile_id, report_id)` to get health risk data
 try:
     risk = wegene.Risk().get_risk(profile_id, 88)
     print(risk.caseid)
+    print(risk.description)
     print(risk.risk)
     print(risk.genotypes.data[0].rsid)
+except Exception as e:
+    print(e.response_body)
+```
+
+#### Get Metabolism/Traits/Drug/Carrier Report
+
+Use `wegene.Health().get_metabolism(profile_id, report_id)` to get health metabolism info
+
+Use `wegene.Health().get_traits(profile_id, report_id)` to get genetic traits info
+
+Use `wegene.Health().get_drug(profile_id, report_id)` to get drug response info
+
+Use `wegene.Health().get_carrier(profile_id, report_id)` to get disease carrier info
+
+```python
+try:
+    carrier = wegene.Health().get_drug(profile_id, 184)
+    print(carrier.caseid)
+    print(carrier.description)
+    print(carrier.genotypes.data[0].rsid)
+    for allele in carrier.genotypes.data:
+        print(allele.genotype)
+        print(allele.tsummary)
 except Exception as e:
     print(e.response_body)
 ```
@@ -137,27 +167,6 @@ try:
     demographics = wegene.Demographics().get_demographics(profile_id)
     print(demographics.surname)
     print(demographics.population)
-except Exception as e:
-    print(e.response_body)
-```
-
-
-#### Get Health Data
-
-Use `wegene.Health().get_metabolism(profile_id, report_id)` to get health metabolism info
-
-Use `wegene.Health().get_traits(profile_id, report_id)` to get genetic traits info
-
-Use `wegene.Health().get_drug(profile_id, report_id)` to get drug response info
-
-Use `wegene.Health().get_carrier(profile_id, report_id)` to get disease carrier info
-
-```python
-try:
-    drug = wegene.Health().get_drug(profile_id, 158)
-    print(drug.caseid)
-    print(drug.tsummary)
-    print(drug.genotypes.data[0].rsid)
 except Exception as e:
     print(e.response_body)
 ```

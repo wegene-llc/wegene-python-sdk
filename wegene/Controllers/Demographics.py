@@ -75,7 +75,7 @@ class Demographics(object):
         if isinstance(response.json(), dict):
             # Response is already in a dictionary, return the object
             try:
-                return Demographics(**response.json())
+                return Demographic(**response.json())
             except TypeError:
                 raise APIException("Invalid JSON returned",
                                    response.status_code, response.json())
