@@ -1,7 +1,7 @@
 import wegene
 
 wegene.Configuration.BASE_URI = 'https://api.wegene.com'
-wegene.Configuration.o_auth_access_token = '<>'
+wegene.Configuration.o_auth_access_token = '<A Valid Access Token with Proper Scope>'
 
 profile_id = ''
 try:
